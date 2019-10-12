@@ -1,0 +1,157 @@
+= Todo List
+
+== Section 1 - Motivations for the App
+
+My motivations for this app are to gain experience to actually making an app, and because I'm quite a forgetful and a todo list is
+a potentially useful application. Virtually everyone could be considered a user of my app especially those who are, like myself, forgetful. An example of a similar app is
+Todoist: https://todoist.com/?utm_source=zapier.com&utm_medium=referral&utm_campaign=zapier, which is available on multiple platforms.
+
+== Section 2 - Meeting Minimum Requirements
+
+My app will have four screens, the first and main screen will be used for viewing, selecting, and managing lists. The second screen will be inside each list and contain the actual
+items. The third screen will be for creating new todo items. The fourth screen will contain options for the todo list app. The app will save state when the screen is rotated
+by using a view model.
+
+Data will be stored via Firebase on the device itself. During the OnCreate of the list selection screen any lists stored will be retrieved from the database, also any options will be applied. Once a list is chosen, the items on that
+list will be retrieved during the OnCreate of the list-items activity. The list add activity will add data to the database when the "Add" button is pressed. Finally, the options activity
+will add to database when options are saved.
+
+The app will have the ability to connect to internet via Firebase which will allow the app to sync it's data between other devices.
+
+== Section 3 - MVC Breakdown of My App
+
+=== View Description
+All views in my app will be using the constraint layout due to ease of use. The minimum screen size that will be supported is a width of
+320dp.
+
+==== List View
+	* XML Files: list_view.xml & list_view.xml (land)
+	
+	* Controllers for List View activity:
+	
+		** List items will call openList listener when pressed
+		
+		** "Add new Todo List" Button Listener: addNewList
+		
+		** "Change List Name" Button Listener: editListName
+		
+		** "Options" Button Listener: openOptions
+		
+		** "Exit" Button Listener: exitProcedure
+		
+	image::ViewListItemsHandDrawn.png[ViewList]
+	
+==== Todo Item View
+	* XML Files: todo_view.xml & todo_view.xml (land)
+	
+	* Controllers for Todo Item View activity: 
+	
+		** Todo list items will call todoDone listener when checked
+		
+		** "Add" Button Listener: addNewItem
+		
+		** "Edit" Button Listener: editItem
+		
+		** "Delete" Button Listener: deleteItem
+		
+		** "DeleteList" Button Listener: deleteList
+		
+		** "Options" Button Listener: openOptions
+		
+		** "Back to Lists" Button Listener: backToLists
+		
+		** "Exit" Button Listener: exitProcedure
+		
+	image::ViewTodoItemsHandDrawn.png[TodoItems]
+		
+==== Add/Edit View
+
+	* XML Files: add_edit_view.xml & add_edit_view.xml (land)
+	
+	* Controllers for Add/Edit View activity:
+	
+		** "Add" Button Listener: addTodo
+		
+		** "Back to List" Button Listener: backToList
+		
+	image::AddEditViewHandDrawn.png[AddEdit]
+		
+==== Options View
+	* XML Files: options_view.xml & options_view.xml (land)
+	
+	* Controllers for Options View activity:
+		
+		** "Firebase Auth" Button Listener: firebaseAuth
+		
+		** "Back" Button Listener: returnToPrevious
+		
+		** "Save" Button Listener: saveOptions
+		
+		** "Exit" Button Listener: exitProcedure
+		
+	image::OptionsViewHandDrawn.png[Options]
+	
+=== Model Description
+Data the app will need to store:
+
+	* The names of all lists
+	
+	* The todo contents of each of those lists
+	
+	* The notification/alarm/time/ and date information for each item on those lists
+	
+	* Options the user has set
+	
+	* Firebase Auth data
+
+Firebase a NoSQL database will be used for storing the necessary data.
+
+=== Controller Description
+==== List View controller descriptions
+
+	* openList, will open the Todo Item activity and pass that activity the necessary information to populate the todo list with all elements
+	
+	* addNewList, Will create a dialog that allows input of a name, then creates a new list with that name and appends
+	a clickable button to the list with the correct name
+	
+		** This will create a new list in the database
+		
+	* editListName, changes the color of the list-buttons, and allows them to be clicked which will then bring up a dialog that
+	allows the list name to be changed
+	
+	* openOptions, opens the options activity
+	
+	* exitProcedure, exits the program
+
+==== Todo Item View controller descriptions
+	* addNewItem, opens the add/edit activity
+	
+	* editItem, changes colors of buttons to signify selection is available then upon selection opens the add/edit activity and sends data to populate it based on the selected button
+	
+	* deleteItem, changes colors of buttons to signify selection is available then upon selection deletes the item 
+	
+		** This will modify the database by removing an item from the list
+		
+	* deleteList, opens a dialog confirming user wants to delete list, and then deletes it if the user selects yes
+	
+		** This will modify the database by completely deleting the list
+		
+	* openOptions, opens options activity
+	
+	* backToList, returns to the List View activity
+	
+	* exitProcedure, exits the program
+	
+==== Add/Edit View controller descriptions
+	* addTodo, adds a todo element to the currently selected list with the chosen settings, or if the activity was opened with edit, changes the data in the model 
+	
+	* backToList, returns to the Todo list without adding anything
+
+==== Options View controller descriptions
+	* firebaseAuth, opens a dialog that contains that allows user to verify identity and sync devices via firebase
+	
+	* saveOptions, edits values related to the color scheme and alarm in the model provided they were changed via the drop down menus
+	
+	* returnToPrevious, returns to whatever activity was opened previously
+	
+	* exitProcedure, exits the program
