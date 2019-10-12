@@ -39,7 +39,7 @@ All views in my app will be using the constraint layout due to ease of use. The 
 		
 		** "Exit" Button Listener: exitProcedure
 		
-	image::ViewListItemsHandDrawn.png[ViewList]
+image::ViewListItemsHandDrawn.png[ViewList]
 	
 ==== Todo Item View
 	* XML Files: todo_view.xml & todo_view.xml (land)
@@ -62,7 +62,7 @@ All views in my app will be using the constraint layout due to ease of use. The 
 		
 		** "Exit" Button Listener: exitProcedure
 		
-	image::ViewTodoItemsHandDrawn.png[TodoItems]
+image::ViewTodoItemsHandDrawn.png[TodoItems]
 		
 ==== Add/Edit View
 
@@ -74,7 +74,7 @@ All views in my app will be using the constraint layout due to ease of use. The 
 		
 		** "Back to List" Button Listener: backToList
 		
-	image::AddEditViewHandDrawn.png[AddEdit]
+image::AddEditViewHandDrawn.png[AddEdit]
 		
 ==== Options View
 	* XML Files: options_view.xml & options_view.xml (land)
@@ -89,7 +89,7 @@ All views in my app will be using the constraint layout due to ease of use. The 
 		
 		** "Exit" Button Listener: exitProcedure
 		
-	image::OptionsViewHandDrawn.png[Options]
+image::OptionsViewHandDrawn.png[Options]
 	
 === Model Description
 Data the app will need to store:
