@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="createNewTodoList">Create New Todo List</string>
+    <string name="changeListName">Change List Name</string>
+    <string name="options">Options</string>
+    <string name="exit">Exit</string>
+    <string name="appTitle">Todo App</string>
+    <string name="edit">Edit</string>
+    <string name="deleteItem">Delete Item</string>
+    <string name="backToLists">Back To Lists</string>
+    <string name="deleteList">Delete This List</string>
+    <string name="notification">Push Notifications?</string>
+    <string name="alarm">Set Alarm?</string>
+    <string name="Submit">Button</string>
+    <string name="submit">Submit</string>
+    <string name="todoEntryText">Write your todo list item here!</string>
+    <string name="todoEntryLabel">Todo:</string>
+    <string name="timeEntryLabel">Time:</string>
+    <string name="dateEntryLabel">Date:</string>
+    <string name="returnToPreviousList">Return To List</string>
+    <string name="optionsTitle">Options</string>
+    <string name="appColorScheme">App Color Scheme</string>
+    <string name="alarmType">Alarm Type</string>
+    <string name="firebaseAuth">Firebase Authentication</string>
+    <string name="save">Save</string>
+    <string name="backButton">Back</string>
+    <string name="deleteListMain">Delete A List</string>
+</resources>

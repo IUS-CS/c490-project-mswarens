@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group>
+        <item
+            android:id="@+id/editListItem"
+            android:title="@string/edit" />
+        <item
+            android:id="@+id/deleteItem"
+            android:title="@string/deleteItem" />
+        <item
+            android:id="@+id/deleteList"
+            android:title="@string/deleteList" />
+        <item
+            android:id="@+id/backToLists"
+            android:title="@string/backToLists" />
+    </group>
+</menu>
